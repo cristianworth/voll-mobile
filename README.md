@@ -1,3 +1,5 @@
+Auto Indent Selected Lines: Shift + Alt + F 
+
 [Figma](https://www.figma.com/file/61CRNXlUmooMttGVa0GvML/React-fullstack---Voll.med?node-id=444-5625&t=wLBbxrl8vGdpTDf4-0) project
 
 Create project
