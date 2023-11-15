@@ -14,7 +14,7 @@ import { Titulo } from "./componentes/Titulo";
 import { Botao } from "./componentes/Botao";
 import { EntradaTexto } from "./componentes/EntradaTexto";
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <VStack flex={1} alignItems="center" justifyContent={"center"} padding={5}>
       <Image source={Logo} alt="Logo Voll" />
@@ -36,13 +36,13 @@ export default function Login() {
           ></Input>
         </FormControl>
       </Box>
-      <Botao>Entrar</Botao>
+      <Botao onPress={() => navigation.navigate("Tabs")}>Entrar</Botao>
       <Link href="https://cursos.alura.com.br/course/react-native-typescript-app-consultas-medicas/task/125538">
         Esqueceu a sua senha?
       </Link>
       <Box w={"100%"} flexDirection={"row"} justifyContent={"center"}>
         <Text>Ainda não tem cadastro ?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Cadastro")}>
           <Text color={"blue.500"}>Faça o seu cadastro!</Text>
         </TouchableOpacity>
       </Box>
