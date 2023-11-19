@@ -19,7 +19,7 @@ const tabs = [
   {
     name: "Principal",
     component: Principal,
-    icon: "home-outline",
+    icon: "home",
   },
   {
     name: "Consultas",

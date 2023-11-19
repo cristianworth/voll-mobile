@@ -3,16 +3,18 @@ import { FormControl, Input, ITextProps } from "native-base";
 interface EntradaTextoProps extends ITextProps {
   label?: string;
   placeholder: string;
+  secureTextEntry?: boolean;
 }
 
 export function EntradaTexto({
   label,
   placeholder,
+  secureTextEntry = false,
   ...rest
 }: EntradaTextoProps) {
   return (
     <FormControl marginTop={3}>
-      <FormControl.Label>{label}</FormControl.Label>
+      { label != null && <FormControl.Label>{label}</FormControl.Label>}
       <Input
         placeholder={placeholder}
         size={"lg"}
@@ -20,6 +22,7 @@ export function EntradaTexto({
         borderRadius={"lg"}
         bgColor={"gray.100"}
         shadow={3}
+        secureTextEntry={secureTextEntry}
         {...rest}
       ></Input>
     </FormControl>

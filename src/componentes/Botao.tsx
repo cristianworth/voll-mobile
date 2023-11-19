@@ -3,14 +3,15 @@ import { ReactNode } from "react";
 
 interface BotaoProps extends ITextProps {
   children: ReactNode;
+  autoSize?: boolean
 }
 
-export function Botao({ children, ...rest }: BotaoProps) {
+export function Botao({ children, autoSize = false, ...rest }: BotaoProps) {
   return (
     <Button
-      w={100}
+      w={autoSize ? "auto" : "100%"}
       bg={"blue.800"}
-      marginTop={10}
+      marginTop={3}
       borderRadius={"lg"}
       {...rest}
     >

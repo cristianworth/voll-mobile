@@ -24,20 +24,14 @@ export default function Login({ navigation }) {
           label="Email"
           placeholder="Insira seu endereço de email"
         />
-        <FormControl marginTop={3}>
-          <FormControl.Label>Senha</FormControl.Label>
-          <Input
-            placeholder="Insira sua senha"
-            size={"lg"}
-            w={"100%"}
-            borderRadius={"lg"}
-            bgColor={"gray.100"}
-            shadow={3}
-          ></Input>
-        </FormControl>
+        <EntradaTexto
+          label="Senha"
+          placeholder="Insira sua senha"
+          secureTextEntry={true}
+        />
       </Box>
-      <Botao onPress={() => navigation.navigate("Tabs")}>Entrar</Botao>
-      <Link href="https://cursos.alura.com.br/course/react-native-typescript-app-consultas-medicas/task/125538">
+      <Botao onPress={() => navigation.navigate("Tabs")} marginTop={5}>Entrar</Botao>
+      <Link marginTop={3} href="https://cursos.alura.com.br/course/react-native-typescript-app-consultas-medicas/task/125538">
         Esqueceu a sua senha?
       </Link>
       <Box w={"100%"} flexDirection={"row"} justifyContent={"center"}>
