@@ -2,6 +2,7 @@
 Shortcut for Auto Indent Selected Lines: Shift + Alt + F 
 
 [Figma](https://www.figma.com/file/61CRNXlUmooMttGVa0GvML/React-fullstack---Voll.med?node-id=444-5625&t=wLBbxrl8vGdpTDf4-0) project
+Alura course [example](https://github.com/alura-cursos/voll-mobile-projeto-inicial/tree/2c561a455bdafa06b074c0a302084960cd0462a0)
 
 ## Create Expo project
 ```
@@ -32,6 +33,13 @@ npm install @react-navigation/bottom-tabs
 npm install react-native-vector-icons
 npm i --save-dev @types/react-native-vector-icons
 ```
+
+# Todo
+## Use a real dabatase(firebase maybe) ou json data
+Use a for to show all Consultas in the Consultas and Explorar screens.
+The data are not dynamic, maybe on the future I can use a real database such as firebase.
+## Button functions
+Buttons to search Consultas currently don't have any functionality.
 
 # My personal Reac Development Q&A
 ## Question 1

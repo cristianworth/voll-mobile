@@ -12,6 +12,7 @@ import { Titulo } from "../componentes/Titulo";
 import Depoimento from "../componentes/Depoimento";
 import { EntradaTexto } from "../componentes/EntradaTexto";
 import { Botao } from "../componentes/Botao";
+import { BuscaMedicos } from "../componentes/BuscaMedicos";
 
 const depoimentos = [
   {
@@ -49,11 +50,7 @@ export default function Principal() {
           <Titulo marginBottom={5} alignSelf={"flex-start"} color={"blue.500"}>
             Boas-vindas!
           </Titulo>
-
-          <EntradaTexto placeholder="Digite a especialidade"></EntradaTexto>
-          <EntradaTexto placeholder="Digite sua localização"></EntradaTexto>
-          <Botao onPress={() => buscarConsultas()}>Buscar</Botao>
-          <Divider />
+          <BuscaMedicos/>
         </FormControl>
 
         <Titulo color={"blue.900"}>
