@@ -34,6 +34,11 @@ npm install react-native-vector-icons
 npm i --save-dev @types/react-native-vector-icons
 ```
 
+## Install axios, a library to make HTTP requisitions for an API
+```
+npm install axios
+```
+
 # Todo
 ## Use a real dabatase(firebase maybe) ou json data
 Use a for to show all Consultas in the Consultas and Explorar screens.
