@@ -8,26 +8,59 @@ import {
   Input,
   Button,
   Link,
+  useToast,
 } from "native-base";
 import Logo from "./assets/Logo.png";
 import { Titulo } from "./componentes/Titulo";
 import { Botao } from "./componentes/Botao";
 import { EntradaTexto } from "./componentes/EntradaTexto";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { doLogin } from "./services/AuthService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { jwtDecode } from "jwt-decode";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [carregando, setCarregando] = useState(true);
+  const toast = useToast();
+
+  useEffect(() => {
+    async function validateLogin() {
+      const token = await AsyncStorage.getItem("token");
+      if (token) {
+        navigation.replace("Tabs");
+
+        toast.show({
+          title: "LOGIN SUCCESSFUL",
+          background: "green.500",
+        });
+      }
+      setCarregando(false);
+    }
+    validateLogin();
+  }, []);
 
   async function login() {
     const resultado = await doLogin(email, senha);
     if (resultado) {
-      navigation.replace("Tabs");
-      console.log("LOGIN SUCCESSFUL");
+      const { token } = resultado;
+      AsyncStorage.setItem("token", token);
+
+      const tokenDecodificado = jwtDecode(token) as any;
+      const pacienteId = tokenDecodificado.id;
+      AsyncStorage.setItem("pacienteId", pacienteId);
     } else {
-      console.log("EMAIL OR PASSWORD INVALID");
+      toast.show({
+        title: "LOGIN INCORRECT",
+        description: "EMAIL OR PASSWORD INVALID",
+        background: "red.500",
+      });
     }
+  }
+
+  if (carregando) {
+    return null;
   }
 
   return (

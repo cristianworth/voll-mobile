@@ -39,6 +39,12 @@ npm i --save-dev @types/react-native-vector-icons
 npm install axios
 ```
 
+## Install async storate and jwt for login persistence
+```
+npm i @react-native-async-storage/async-storage
+npm i jwt-decode
+```
+
 # Todo
 ## Use a real dabatase(firebase maybe) ou json data
 Use a for to show all Consultas in the Consultas and Explorar screens.
