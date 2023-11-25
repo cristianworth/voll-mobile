@@ -29,7 +29,7 @@ export default function Login({ navigation }) {
     async function validateLogin() {
       const token = await AsyncStorage.getItem("token");
       if (token) {
-        navigation.replace("Tabs");
+        navigation.replace("Cadastro");
 
         toast.show({
           title: "LOGIN SUCCESSFUL",

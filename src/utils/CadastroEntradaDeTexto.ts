@@ -5,23 +5,41 @@ const secoes = [
     entradasDeTexto: [
       {
         id: 1,
+        name: "nome",
         label: "Nome",
         placeholder: "Digite seu nome",
       },
       {
         id: 2,
+        name: "email",
         label: "Email",
         placeholder: "Digite seu email",
       },
       {
         id: 3,
+        name: "senha",
         label: "Senha",
+        secureTextEntry: true,
         placeholder: "Digite sua senha",
       },
       {
         id: 4,
-        label: "Repita a senha",
+        name: "confirmeSenha",
+        label: "Confirme a senha",
+        secureTextEntry: true,
         placeholder: "Digite sua senha novamente",
+      },
+      {
+        id: 5,
+        name: "cpf",
+        label: "CPF",
+        placeholder: "Digite seu CPF",
+      },
+      {
+        id: 6,
+        name: "imagem",
+        label: "Foto de perfil",
+        placeholder: "Link da foto",
       },
     ],
     checkboxes: [],
@@ -32,26 +50,37 @@ const secoes = [
     entradasDeTexto: [
       {
         id: 1,
+        name: "cep",
         label: "CEP",
         placeholder: "Digite seu CEP",
       },
       {
         id: 2,
-        label: "Endereço",
-        placeholder: "Digite seu endereço",
+        name: "rua",
+        label: "Rua",
+        placeholder: "Digite sua rua",
       },
       {
         id: 3,
+        name: "numero",
         label: "Número",
         placeholder: "Digite seu número",
       },
       {
         id: 4,
+        name: "complemento",
         label: "Complemento",
         placeholder: "Digite seu complemento",
       },
       {
         id: 5,
+        name: "estado",
+        label: "Estado",
+        placeholder: "Digite seu estado",
+      },
+      {
+        id: 6,
+        name: "telefone",
         label: "Telefone",
         placeholder: "Digite seu telefone",
       },
