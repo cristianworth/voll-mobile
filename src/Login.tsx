@@ -15,7 +15,7 @@ import { Titulo } from "./componentes/Titulo";
 import { Botao } from "./componentes/Botao";
 import { EntradaTexto } from "./componentes/EntradaTexto";
 import { useEffect, useState } from "react";
-import { doLogin } from "./services/AuthService";
+import { doLogin, storeLoginData } from "./services/AuthService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { jwtDecode } from "jwt-decode";
 
@@ -28,13 +28,14 @@ export default function Login({ navigation }) {
   useEffect(() => {
     async function validateLogin() {
       const token = await AsyncStorage.getItem("token");
-      if (token) {
-        navigation.replace("Cadastro");
+      console.log("token = ", token);
 
-        toast.show({
-          title: "LOGIN SUCCESSFUL",
-          background: "green.500",
-        });
+      const pacienteId = await AsyncStorage.getItem("pacienteId");
+      console.log("pacienteId = ", pacienteId);
+
+      if (token) {
+        // Se já estiver logado vai para a tela principal Tabs
+        navigation.replace("Tabs");
       }
       setCarregando(false);
     }
@@ -42,14 +43,14 @@ export default function Login({ navigation }) {
   }, []);
 
   async function login() {
-    const resultado = await doLogin(email, senha);
-    if (resultado) {
-      const { token } = resultado;
-      AsyncStorage.setItem("token", token);
-
-      const tokenDecodificado = jwtDecode(token) as any;
-      const pacienteId = tokenDecodificado.id;
-      AsyncStorage.setItem("pacienteId", pacienteId);
+    const loginData = await doLogin(email, senha);
+    if (loginData) {
+      toast.show({
+        title: "LOGIN SUCCESSFUL",
+        background: "green.500",
+      });
+      navigation.replace("Tabs");
+      storeLoginData(loginData);
     } else {
       toast.show({
         title: "LOGIN INCORRECT",

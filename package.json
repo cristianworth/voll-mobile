@@ -17,10 +17,13 @@
     "axios": "^1.6.2",
     "expo": "^49.0.0",
     "expo-status-bar": "~1.6.0",
+    "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
+    "jwt-verify": "^0.0.2",
     "native-base": "^3.4.28",
     "react": "18.2.0",
     "react-native": "0.72.4",
+    "react-native-crypto": "^2.2.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-svg": "13.9.0",
@@ -29,6 +32,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/react-native-vector-icons": "^6.4.17"
   },
   "private": true

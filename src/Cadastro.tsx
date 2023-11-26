@@ -73,7 +73,7 @@ export default function Cadastro({ navigation }: any) {
         title: "CREATED SUCCESSFUL",
         background: "green.500",
       });
-      navigation.replace('Login');
+      navigation.replace("Login");
     } else {
       toast.show({
         title: "ERROR TO SAVE DATA",
@@ -141,7 +141,7 @@ export default function Cadastro({ navigation }: any) {
         </Botao>
       )}
       <Botao onPress={() => avancarSecao()} marginTop={4} marginBottom={20}>
-        Avançar
+        {numSecao == 2 ? "Finalizar" : "Avançar"}
       </Botao>
     </ScrollView>
   );

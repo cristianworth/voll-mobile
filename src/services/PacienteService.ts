@@ -19,3 +19,19 @@ export async function createPaciente(paciente: Paciente) {
     return null;
   }
 }
+
+export async function getPacienteById(id: string) {
+  if (!id) return null;
+
+  try {
+    const resultado = await api.get(`/paciente/${id}`);
+    return resultado.data;
+  } catch (error) {
+    if (error.response) {
+      console.error("Response data:", error.response.data);
+      console.error("Response status:", error.response.status);
+      console.error("Response headers:", error.response.headers);
+    }
+    return null;
+  }
+}
