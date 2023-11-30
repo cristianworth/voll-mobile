@@ -6,8 +6,9 @@ import { sarchEspecialistaByEstado } from "../services/MedicoService";
 import { useState } from "react";
 import CardConsulta from "./CardConsulta";
 import { Medico } from "../interfaces/Medico";
+import { NavigationProps } from "../@types/navigation";
 
-export function BuscaMedicos() {
+export function BuscaMedicos({ navigation }: NavigationProps<'Explorar'>) {
   const [especialidade, setEspecialidade] = useState("");
   const [estado, setEstado] = useState("");
   const [listMedicos, setListMedicos] = useState([]);
@@ -24,12 +25,12 @@ export function BuscaMedicos() {
     <ScrollView padding={5} marginBottom={5}>
       <Box w={"100%"} bg={"white"} p="5" borderRadius={"lg"} shadow={"1"}>
         <EntradaTexto
-          placeholder="Digite a especialidade"
+          placeholder="Digite a especialidade ex: cardiologia"
           value={especialidade}
           onChangeText={setEspecialidade}
         ></EntradaTexto>
         <EntradaTexto
-          placeholder="Digite sua localização"
+          placeholder="Digite sua localização ex: Sao Paulo"
           value={estado}
           onChangeText={setEstado}
         ></EntradaTexto>
@@ -49,6 +50,9 @@ export function BuscaMedicos() {
             nome={medico.nome}
             especialidade={medico.especialidade}
             foiAgendado
+            onPress={() =>
+              navigation.navigate("Agendamento", { especialistaId: medico.id })
+            }
           ></CardConsulta>
         ))}
       </Box>

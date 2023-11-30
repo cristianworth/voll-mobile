@@ -8,6 +8,7 @@ interface CardProps extends ITextProps {
   data?: string;
   foiAtendido?: boolean;
   foiAgendado?: boolean;
+  onPress?: () => void;
 }
 
 export default function CardConsulta({
@@ -17,10 +18,18 @@ export default function CardConsulta({
   data,
   foiAtendido = false,
   foiAgendado = false,
+  onPress,
   ...rest
 }: CardProps) {
   return (
-    <VStack marginBottom={5} w={"100%"} bg={foiAtendido ? "blue.100" : "white"} p="5" borderRadius={"lg"} shadow={"2"}>
+    <VStack
+      marginBottom={5}
+      w={"100%"}
+      bg={foiAtendido ? "blue.100" : "white"}
+      p="5"
+      borderRadius={"lg"}
+      shadow={"2"}
+    >
       <Box alignItems={"center"} {...rest} flexDir={"row"}>
         <Avatar size={"lg"} source={{ uri: avatar }} />
         <Stack paddingLeft={"4"}>
@@ -28,10 +37,12 @@ export default function CardConsulta({
             {nome}
           </Text>
           <Text>{especialidade}</Text>
-          { data != null && <Text>{data}</Text> }
+          {data != null && <Text>{data}</Text>}
         </Stack>
       </Box>
-      <Botao>{foiAgendado ? "Agendar consulta" : "Cancelar"}</Botao>
+      <Botao onPress={onPress}>
+        {foiAgendado ? "Agendar consulta" : "Cancelar"}
+      </Botao>
     </VStack>
   );
 }

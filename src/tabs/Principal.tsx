@@ -41,7 +41,7 @@ function buscarConsultas() {
   return "";
 }
 
-export default function Principal() {
+export default function Principal({ navigation, route }: any) {
   return (
     <ScrollView flex={1}>
       <VStack flex={1}>
@@ -50,12 +50,10 @@ export default function Principal() {
           <Titulo marginBottom={5} alignSelf={"flex-start"} color={"blue.500"}>
             Boas-vindas!
           </Titulo>
-          <BuscaMedicos/>
+          <BuscaMedicos navigation={navigation} route={route} />
         </FormControl>
 
-        <Titulo color={"blue.900"}>
-          Depoimentos
-        </Titulo>
+        <Titulo color={"blue.900"}>Depoimentos</Titulo>
         {depoimentos.map((depoimento) => {
           return (
             <Depoimento
