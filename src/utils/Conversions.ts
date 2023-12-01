@@ -9,3 +9,13 @@ export function convertStringToDate(dateString: string) {
     
     return dataConvertida;
    }
+
+   
+export function convertDateToString(data: string): string {
+    const dataFormatada = new Date(data).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+    const [date, time] = dataFormatada.split(" ")
+    const [day, month, year] = date.split("/")
+    const [hour, minute] = time.split(":")
+    const dataConvertida = `${day}/${month}/${year} ${hour}:${minute}`
+    return dataConvertida
+  }

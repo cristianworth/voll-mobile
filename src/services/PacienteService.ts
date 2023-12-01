@@ -35,3 +35,19 @@ export async function getPacienteById(id: string) {
     return null;
   }
 }
+
+export async function getConsultarFromPaciente(id: string) {
+  if (!id) return null;
+
+  try {
+    const resultado = await api.get(`/paciente/${id}/consultas`);
+    return resultado.data;
+  } catch (error) {
+    if (error.response) {
+      console.error("Response data:", error.response.data);
+      console.error("Response status:", error.response.status);
+      console.error("Response headers:", error.response.headers);
+    }
+    return null;
+  }
+}
