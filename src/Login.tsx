@@ -28,10 +28,7 @@ export default function Login({ navigation }) {
   useEffect(() => {
     async function validateLogin() {
       const token = await AsyncStorage.getItem("token");
-      console.log("token = ", token);
-
       const pacienteId = await AsyncStorage.getItem("pacienteId");
-      console.log("pacienteId = ", pacienteId);
 
       if (token) {
         // Se já estiver logado vai para a tela principal Tabs

@@ -25,7 +25,6 @@ export default function Perfil({ navigation }: any) {
       const retornoDadosPaciente = await getPacienteById(pacienteId);
       if (retornoDadosPaciente) {
         setDadosPaciente(retornoDadosPaciente);
-        console.log(retornoDadosPaciente);
       }
     }
     getPacienteData();

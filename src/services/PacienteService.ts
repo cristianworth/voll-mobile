@@ -8,7 +8,6 @@ export async function createPaciente(paciente: Paciente) {
 
   try {
     const resultado = await api.post("/paciente", paciente);
-    console.log(resultado.data);
     return resultado.data;
   } catch (error) {
     if (error.response) {

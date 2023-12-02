@@ -23,3 +23,16 @@ export async function agendarConsulta(
     return null;
   }
 }
+
+export async function deleteConsulta(id: string)
+{
+  try {
+    const resultado = await api.delete(`/consulta/${id}`)
+    return resultado.data;
+  } catch (error) {
+    if (error.response) {
+      console.error("Response data:", error.response.data.message);
+    }
+    return null;
+  }
+}

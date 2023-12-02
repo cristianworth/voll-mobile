@@ -13,33 +13,7 @@ import Depoimento from "../componentes/Depoimento";
 import { EntradaTexto } from "../componentes/EntradaTexto";
 import { Botao } from "../componentes/Botao";
 import { BuscaMedicos } from "../componentes/BuscaMedicos";
-
-const depoimentos = [
-  {
-    descricao:
-      "Scott Pilgrim - 1 Pra quem achou que finalmente teríamos uma adaptação fiel às HQs de Scott Pilgrim, sinto que errou, o anime parece até menos fiel que o filme. Capturaram perfeitamente a vibe das HQs na animação, é criativo, estiloso, engraçado e dinâmico. Estou gostando.",
-    nome: "Hikki, 40 anos, São Paulo/SP.",
-  },
-  {
-    descricao:
-      "No final do primeiro episódio fiquei ??????? Eu jurava que o Scott vencia e fui até ler a HQ dnv pra conferir, mas até aí de boa, começa o episódio 2 e tá tudo diferente, foi aí que me toquei que seria completamente diferente da HQ",
-    nome: "Plopati, 40 anos, São Paulo/SP.",
-  },
-  {
-    descricao:
-      "É legal, mas é muito fraco comparado ao material original, nn entrarei em detalhes pq vc ainda está assistindo, mas  eu nn recomendaria para alguém que vai conhecer a obra",
-    nome: "Buruno, 40 anos, São Paulo/SP.",
-  },
-  {
-    descricao:
-      "É legal, mas é muito fraco comparado ao material original, nn entrarei em detalhes pq vc ainda está assistindo, mas  eu nn recomendaria para alguém que vai conhecer a obra",
-    nome: "Buruno, 40 anos, São Paulo/SP.",
-  },
-];
-
-function buscarConsultas() {
-  return "";
-}
+import { depoimentos } from "../utils/mockData";
 
 export default function Principal({ navigation, route }: any) {
   return (
@@ -57,6 +31,7 @@ export default function Principal({ navigation, route }: any) {
         {depoimentos.map((depoimento) => {
           return (
             <Depoimento
+              key={depoimento.id}
               descricaoDepoimento={depoimento.descricao}
               nomeDepoimento={depoimento.nome}
             />

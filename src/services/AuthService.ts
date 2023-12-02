@@ -11,7 +11,6 @@ export async function doLogin(email: string, senha: string) {
       senha,
     });
 
-    console.log("dados login =", resultado.data);
     return resultado.data;
   } catch (error) {
     if (error.response) {

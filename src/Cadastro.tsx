@@ -41,8 +41,6 @@ export default function Cadastro({ navigation }: any) {
     if (numSecao < secoes.length - 1) {
       setNumSecao(numSecao + 1);
     } else {
-      console.log("dados = ", dados);
-      console.log("planos = ", planos);
       create();
     }
   }
