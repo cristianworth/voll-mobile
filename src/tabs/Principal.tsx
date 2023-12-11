@@ -13,7 +13,7 @@ import Depoimento from "../componentes/Depoimento";
 import { EntradaTexto } from "../componentes/EntradaTexto";
 import { Botao } from "../componentes/Botao";
 import { BuscaMedicos } from "../componentes/BuscaMedicos";
-import { depoimentos } from "../utils/mockData";
+import { depoimentos } from "../utils/MockData";
 
 export default function Principal({ navigation, route }: any) {
   return (

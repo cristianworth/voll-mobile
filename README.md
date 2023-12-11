@@ -46,13 +46,13 @@ npm i jwt-decode
 ```
 
 # Todo
-## Use a real dabatase(firebase maybe) ou json data
+## Use a real dabatase(firebase maybe) ou json server
 Use a for to show all Consultas in the Consultas and Explorar screens.
 The data are not dynamic, maybe on the future I can use a real database such as firebase.
 ## Button functions
 Buttons to search Consultas currently don't have any functionality.
 
-# My personal Reac Development Q&A
+# My personal React Development Q&A
 ## Question 1
 **Q:** In react '...rest' gathers all attributes. Why then can't it be used for every case scenario ? Just use '...rest' so then you can access every attribute without specifying each one manually
 **A:** It's actually called the spread operator, while it can be used in every case it's not recommended because of: performance issues, make it harder to do the validation, documentation and also avoid unintented properties and name conflicts.

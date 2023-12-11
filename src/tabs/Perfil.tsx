@@ -45,7 +45,7 @@ export default function Perfil({ navigation }: any) {
           mt={5}
         ></Avatar>
 
-        <Titulo color={"blue.500"}>Informações pessoas</Titulo>
+        <Titulo color={"blue.500"}>Informações pessoais</Titulo>
         <Titulo fontSize={"lg"} marginBottom={1}>
           {dadosPaciente?.nome}
         </Titulo>

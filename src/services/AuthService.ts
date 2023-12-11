@@ -6,13 +6,16 @@ import jwt from "jsonwebtoken";
 export async function doLogin(email: string, senha: string) {
   if (!email || !senha) return null;
   try {
+    console.log('before api request')
     const resultado = await api.post("/auth/login", {
       email,
       senha,
     });
 
+    console.log('resul api request', resultado)
     return resultado.data;
   } catch (error) {
+    console.log('error return', error)
     if (error.response) {
       console.error("Response data:", error.response.data);
       console.error("Response status:", error.response.status);
