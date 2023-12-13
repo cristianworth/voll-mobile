@@ -65,3 +65,5 @@ Buttons to search Consultas currently don't have any functionality.
 # Troublesothing
 ## Project using SDK 44 but Expo Go needs higher version
 Run **expo upgrade** to update the expo version. If it's still don't work then change the version directly from the **package.json** file after that use the **npm install** command to update the version
+## Fail to connect to API
+Check if your ip it's correct on the api file, right [here](/src/services/api.ts)

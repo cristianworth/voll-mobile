@@ -6,16 +6,13 @@ import jwt from "jsonwebtoken";
 export async function doLogin(email: string, senha: string) {
   if (!email || !senha) return null;
   try {
-    console.log('before api request')
     const resultado = await api.post("/auth/login", {
       email,
       senha,
     });
-
-    console.log('resul api request', resultado)
+    
     return resultado.data;
   } catch (error) {
-    console.log('error return', error)
     if (error.response) {
       console.error("Response data:", error.response.data);
       console.error("Response status:", error.response.status);
@@ -33,18 +30,25 @@ export function storeLoginData(loginData: any) {
   AsyncStorage.setItem("pacienteId", pacienteId);
 }
 
-function decodeTokenId(token) {
+function decodeTokenId(token: string) {
   try {
     interface tokenPayload {
       id: string;
     }
 
+    console.log("Token:", token);
+
+    const decodedToken = jwt.decode(token);
+    console.log("Decoded Token1:", decodedToken);
+    
     const tokenDecodificado = jwtDecode(token) as tokenPayload;
-    console.log("Decoded Token:", tokenDecodificado);
+    console.log("Decoded Token2:", tokenDecodificado);
+
     return tokenDecodificado.id;
   } catch (error) {
     console.error("Error decoding token:", error);
-    return "2579d15f-f4f1-4a09-80dc-9797bfff3887";
+    const decodedId = "2579d15f-f4f1-4a09-80dc-9797bfff3887";
+    return decodedId;
   }
 }
 
