@@ -12,11 +12,7 @@ export default function Perfil({ navigation }: any) {
 
   useEffect(() => {
     async function getPacienteData() {
-      const token = await AsyncStorage.getItem("token");
-      console.log("token = ", token);
-
       const pacienteId = await AsyncStorage.getItem("pacienteId");
-      console.log("pacienteId = ", pacienteId);
 
       if (!pacienteId) {
         return null;

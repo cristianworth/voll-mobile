@@ -18,8 +18,11 @@ import { useEffect, useState } from "react";
 import { doLogin, storeLoginData } from "./services/AuthService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { jwtDecode } from "jwt-decode";
+import jwt from "jsonwebtoken";
+import base64 from 'react-native-base64';
+import { NavigationProps } from "./@types/navigation";
 
-export default function Login({ navigation }) {
+export default function Login({ navigation }: NavigationProps<'Login'>) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [carregando, setCarregando] = useState(true);

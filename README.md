@@ -1,8 +1,9 @@
 # Development
 Shortcut for Auto Indent Selected Lines: Shift + Alt + F 
 
-[Figma](https://www.figma.com/file/61CRNXlUmooMttGVa0GvML/React-fullstack---Voll.med?node-id=444-5625&t=wLBbxrl8vGdpTDf4-0) project
-Alura course [example](https://github.com/alura-cursos/voll-mobile-projeto-inicial/tree/2c561a455bdafa06b074c0a302084960cd0462a0)
+* Figma project [here](https://www.figma.com/file/61CRNXlUmooMttGVa0GvML/React-fullstack---Voll.med?node-id=444-5625&t=wLBbxrl8vGdpTDf4-0)
+* Alura course [here](https://cursos.alura.com.br/course/react-native-integrando-app-web-api)
+* Github project [here](https://github.com/alura-cursos/voll-mobile-integracao-api/tree/aula5)
 
 ## Create Expo project
 ```
@@ -43,6 +44,12 @@ npm install axios
 ```
 npm i @react-native-async-storage/async-storage
 npm i jwt-decode
+```
+
+## Library to decode, but didn't work yet
+```
+npm install react-native-crypto
+npm install --save react-native-base64
 ```
 
 # Todo
